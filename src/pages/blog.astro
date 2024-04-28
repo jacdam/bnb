@@ -1,0 +1,11 @@
+---
+    import BaseLayout from '../layouts/BaseLayout.astro'
+    const allPosts = await Astro.glob('./posts/*.md');
+    const pageTitle = "Blog Archive Page";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <ul>
+        { allPosts.map( (post) => <li>{post.frontmatter.title}</li>) }
+    </ul>
+</BaseLayout>
